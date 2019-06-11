@@ -1,0 +1,33 @@
+<div class="container-fluid"> 
+  <marquee><h3 class="first">Welcome to goods info app</h3></marquee> 
+  <br>
+  <p style="color:rgb(56, 9, 19);"><q>just click on the <b><u> Add goods here </u></b>button below to add products in list</q></p> 
+  <button class="btn" (click)="addProduct()">
+    Add Goods here
+  </button>
+ 
+<table>
+  <thead>
+    <tr>
+      <td class="hd">Sr No.</td>
+      <td class="hd">item info</td>
+      <td class="hd ">SKU id</td>
+      <td class="hd ">Quantity</td>
+      <td class="hd">Delete</td>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor ="let d of allprodctdetail; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{d.p_name}}</td>
+      <td>{{d.p_sku}}</td>
+      <td>{{d.p_quantity}}</td>
+      <td> <a class="del" ><img src="../assets/images/del.png" height="20px" width="20px" ></a></td>
+  
+    </tr>
+  </tbody>
+</table>
+</div>
+

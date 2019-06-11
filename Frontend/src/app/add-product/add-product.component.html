@@ -1,0 +1,16 @@
+
+<form [formGroup]="productdata" (ngSubmit)="submitHandler()">
+  <div formArrayName="more">
+    <div *ngFor="let items of productsArray.controls;let i = index;" [formGroupName]="i">
+      <h4>Product {{i+1}}</h4>
+      <input class="field"type="text" placeholder="Enter Product Name" formControlName = "p_name"><br>
+      <input class="field"type=" text " placeholder="Enter Product SKU" formControlName = "p_sku"><br>
+      <input class="field"type="text " placeholder=" Product Quantity" formControlName = "p_quantity"><br>
+      <button class="btn" (click)="removeProduct(i)">Remove</button>
+    </div>
+  </div>
+  <div class="submition">
+    <button class="btn" type="button" (click)="addProduct()">Add More+</button>
+    <input class="btn" type="submit" value="Add Product" [disabled]="!this.productdata.valid">
+  </div>
+</form>
